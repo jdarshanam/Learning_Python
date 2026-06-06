@@ -1,16 +1,27 @@
-def fizzBuzz(n: int):
-    for i in range(1, n+1):
-        if i % 3 == 0 and i % 5 == 0:
-            print("FizzBuzz")
-        elif i % 3 == 0:
-            print("Fizz")
-        elif i % 5 == 0:
-            print("Buzz")
-        else:
-            print(i)
-
+class chars_in_a_string:
+    
+    #Solution-I
+    def count_chars_using_dict(self, inputStr: str) -> dict:
+        result = {}
+        for e in inputStr:
+            result[e] = result.get(e,0) + 1
+        return result
+    
+    #Solution-II
+    def count_chars_using_function(self, inputStr: str) -> dict:
+        from collections import Counter
+        freq = Counter(inputStr)
+        return freq
+    
 def main():
-    fizzBuzz(10)
+    inputStr = "abcabAbC"
+    c = chars_in_a_string()
+    print(c.count_chars_using_dict(inputStr))
+    print(c.count_chars_using_function(inputStr))
+    cntr  = c.count_chars_using_function(inputStr)
+    print(cntr.total())
+    print(cntr['A'])
+    
 
-if __name__=="__main__":
+if __name__ == "__main__" :
     main()
