@@ -1,16 +1,17 @@
-def fizzBuzz(n: int):
-    for i in range(1, n+1):
-        if i % 3 == 0 and i % 5 == 0:
-            print("FizzBuzz")
-        elif i % 3 == 0:
-            print("Fizz")
-        elif i % 5 == 0:
-            print("Buzz")
-        else:
-            print(i)
+class reverse_string:
+
+    #Solution-I
+    def withReversedFunction(self ,inputStr: str) -> str:
+        rStr = reversed(inputStr)
+        print(type(rStr))
+        return "".join(rStr)
+    
 
 def main():
-    fizzBuzz(10)
+    inputStr = "abcd"
+    c = reverse_string()
+    print(c.withReversedFunction(inputStr))
 
-if __name__=="__main__":
+
+if __name__ == "__main__" :
     main()

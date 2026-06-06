@@ -2,7 +2,7 @@ class ReverseStringSolutions:
     
     #Solution-I using reverse function
     def reverseWithFunction(self,inputStr: str) -> str:
-        return "".join(reversed(inputStr))
+        return "".join(reversed(inputStr)) # reversed(inputStr) converts the string to reversed class
     
     #Solution-II using indexes
     def reverseUsingIndexes(self, inputStr: str) -> str:
