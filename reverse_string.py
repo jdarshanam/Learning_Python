@@ -11,14 +11,14 @@ class ReverseStringSolutions:
     #Solution-III using reverse function of list
     def reverseUsingList(self, inputStr: str) -> str:
         listStr = list(inputStr)
-        listStr.reverse() #inplace reverse
+        listStr.reverse() #inplace reverse , note: reverse return None
         return "".join(listStr)
 
 def main():
     c = ReverseStringSolutions()
     inputStr = "abcdef"
-    #print(c.reverseWithFunction(inputStr))
-    #print(c.reverseUsingIndexes(inputStr))
+    print(c.reverseWithFunction(inputStr))
+    print(c.reverseUsingIndexes(inputStr))
     print(c.reverseUsingList(inputStr))
 
 if __name__ == "__main__":
