@@ -49,8 +49,8 @@ class palindrom_string:
 def main():
     inputStr = "who>><HW"
     c = palindrom_string(inputStr)
-    #print(c.using_indexes())
-    #print(c.using_reverse_function())
+    print(c.using_indexes())
+    print(c.using_reverse_function())
     print(c.using_list_reverse())
 
 if __name__ == "__main__":
