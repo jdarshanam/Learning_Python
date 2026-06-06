@@ -1,29 +1,27 @@
-class reverse_string:
-
+class chars_in_a_string:
+    
     #Solution-I
-    def withReversedFunction(self ,inputStr: str) -> str:
-        rStr = reversed(inputStr) # It converts to reversed class
-        print(type(rStr))
-        return "".join(rStr)
+    def count_chars_using_dict(self, inputStr: str) -> dict:
+        result = {}
+        for e in inputStr:
+            result[e] = result.get(e,0) + 1
+        return result
     
     #Solution-II
-    def withIndexes(self, inputStr: str) -> str:
-        return inputStr[::-1]
+    def count_chars_using_function(self, inputStr: str) -> dict:
+        from collections import Counter
+        freq = Counter(inputStr)
+        return freq
     
-    #Solution-III
-    def withList(self, inputstr: str) :
-        listStr = list(inputstr)
-        listStr.reverse()
-        return "".join(listStr)
-
-
 def main():
-    inputStr = "abcd"
-    c = reverse_string()
-    #print(c.withReversedFunction(inputStr))
-    #print(c.withIndexes(inputStr))
-    print(c.withList(inputStr))
-
+    inputStr = "abcabAbC"
+    c = chars_in_a_string()
+    print(c.count_chars_using_dict(inputStr))
+    print(c.count_chars_using_function(inputStr))
+    cntr  = c.count_chars_using_function(inputStr)
+    print(cntr.total())
+    print(cntr['A'])
+    
 
 if __name__ == "__main__" :
     main()
