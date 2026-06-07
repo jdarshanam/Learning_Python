@@ -1,34 +1,37 @@
 class temp:
 
-    #Sol-I
-    def sum_in_array_look_back(self, nums: list[int], target: int) -> list[int]:
-        look_back = {}
-        for index, num in enumerate(nums):
-            complement = target - num
-            if complement in look_back:
-                return [look_back.get(complement),index]
-            else:
-                look_back[num] = index
-        return []
+    def __init__(self, inputStr: str):
+        self.cleaned_str = "".join(e.lower() for e in inputStr if e.isalnum())
+        print(f"raw input - {inputStr}     cleaned_str - {self.cleaned_str}")
+    
+    #sol-I
+    def find_palindrom_by_index(self) -> bool:
+        left = 0
+        right = len(self.cleaned_str) -1
 
-    #Sol-I
-    def sum_in_array_multi_match(self, nums: list[int], target: int) -> list[list[int]]:
-        look_back = {}
-        result = []
-        for index, num in enumerate(nums):
-            complement = target - num
-            if complement in look_back:
-                result.append((look_back.get(complement),index))
-            else:
-                look_back[num] = index
-        return result
+        while left < right:
+            if self.cleaned_str[left] != self.cleaned_str[right]:
+                return False
+            left += 1
+            right -= 1
+        return True
+
+
+    def check_with_reversed(self) -> bool:    
+        revStr = "".join(reversed(self.cleaned_str))
+        if revStr == self.cleaned_str:
+            return True
+        else:
+            return False
+        
         
 def main():
-    input = [1,2,3,4,5,6,7,8,9]
-    target = 7
-    c = temp()
-    print(c.sum_in_array_look_back(input,target))
-    print(c.sum_in_array_multi_match(input,target))
+    #wordsList = ["eat", "tea", "tan", "ate", "nat", "bat"]
+    inputStr = "whohW!fg!!!"
+    c = temp(inputStr)
+
+    print(c.find_palindrom_by_index())
+    print(c.check_with_reversed())
     
 
 if __name__ == "__main__":
