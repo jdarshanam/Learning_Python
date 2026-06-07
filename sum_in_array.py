@@ -39,7 +39,7 @@ class sum_in_array:
 
 def main():
     searchArray = [1,2,3,4,5,6,7]
-    target = 9
+    target = 7
     c = sum_in_array()
     #solution-I
     #res = c.two_sum(searchArray,target)
