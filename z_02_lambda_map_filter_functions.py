@@ -61,6 +61,9 @@ print(squared_nums)
 first_letter_in_names = list(map(lambda name : name[0], names))
 print(first_letter_in_names)
 
+reverse_names = list(map(lambda name : name[::-1],names))
+print(reverse_names)
+
 even_nums = list(filter(lambda num : num % 2 == 0, nums))
 print(even_nums)
  
